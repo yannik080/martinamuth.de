@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #778F84;
+  --color-background: #F5F5F5;
+  --color-charcoal: #1A1A1A;
+
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Border Radius */
+  --radius-xl: 1rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+  --radius-4xl: 4rem;
+}
+
+/* Base styles and Noise overlay */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-charcoal font-sans antialiased overflow-x-hidden relative min-h-screen selection:bg-primary/30 selection:text-charcoal;
+  }
+
+  /* Global Noise Texture */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Navbar Animation States */
+  .nav-base {
+    @apply fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl flex items-center justify-between px-6 md:px-12 py-6 border border-transparent text-white z-50;
+    /* When removing .nav-scrolled, delay the text color fade to white so it remains readable while background disappears */
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  }
+
+  .nav-scrolled {
+    @apply top-6 w-[95%] max-w-4xl bg-white/90 backdrop-blur-md shadow-xl border border-charcoal/10 rounded-full px-6 md:px-8 py-3 text-charcoal;
+    /* When applying .nav-scrolled, delay background/backdrop-filter so text starts getting dark first */
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s,
+      backdrop-filter 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+  }
+}
