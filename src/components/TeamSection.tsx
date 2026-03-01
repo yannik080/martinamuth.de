@@ -39,7 +39,7 @@ export function TeamSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 max-w-5xl w-full">
                 {/* Martina */}
                 <div className="team-member flex flex-col items-center text-center group">
-                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden mb-8 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden mb-8 border-4 border-transparent transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:border-primary/20">
                         <img
                             src="/images/Martina.jpg"
                             alt="Martina Muth"
@@ -49,23 +49,23 @@ export function TeamSection() {
                     <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">Martina Muth</h3>
                     <p className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4">Gründerin & Strategie</p>
                     <p className="text-charcoal/70 font-sans leading-relaxed max-w-sm">
-                        Seit über zwei Jahrzehnten die treibende Kraft für Corporate Branding und maßgeschneiderte Textilkonzepte für internationale Top-Marken.
+                        Seit fast drei Jahrzehnten (u.a. bei der renommierten SOLUTIONS Agentur) die treibende Kraft für Corporate Branding und maßgeschneiderte Textilkonzepte für internationale globale Player.
                     </p>
                 </div>
 
-                {/* Loana */}
+                {/* Lorna */}
                 <div className="team-member flex flex-col items-center text-center group pt-0 md:pt-16">
-                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden mb-8 transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden mb-8 border-4 border-transparent transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:border-primary/20">
                         <img
-                            src="/images/Loana.jpeg"
-                            alt="Loana"
+                            src="/images/Lorna.jpeg"
+                            alt="Lorna"
                             className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                         />
                     </div>
-                    <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">Loana</h3>
+                    <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">Lorna</h3>
                     <p className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4">Sales & Kundenberatung</p>
                     <p className="text-charcoal/70 font-sans leading-relaxed max-w-sm">
-                        Mit meiner Erfahrung im Vertrieb für unterschiedlichste Branchen erkenne ich schnell, worauf es ankommt. Meine Leidenschaft gilt Menschen, Marken und maßgeschneiderten Lösungen – für Produkte, die perfekt passen und Eindruck hinterlassen.
+                        Mit meiner Erfahrung im Vertrieb für unterschiedlichste Branchen erkenne ich schnell, worauf es ankommt. Meine Leidenschaft gilt Menschen, Marken und maßgeschneiderten Lösungen – um genau das haptische Produkt zu finden, das Ihre Werte repräsentiert.
                     </p>
                 </div>
             </div>

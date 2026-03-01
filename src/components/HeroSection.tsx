@@ -44,16 +44,16 @@ export function HeroSection() {
             {/* Content */}
             <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center text-center mt-20">
                 <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 tracking-tighter hero-text">
-                    Die Essenz Ihrer Marke. <br />
+                    Marken-Essenz. <br />
                     Greifbar gemacht.
                 </h1>
 
-                <p className="text-primary text-4xl md:text-6xl font-serif italic mb-8 hero-text">
-                    Identität
+                <p className="text-primary text-4xl md:text-5xl font-serif italic mb-8 hero-text max-w-4xl text-balance">
+                    Corporate Identity übersetzt in Premium Textilien und B2B Merchandise.
                 </p>
 
                 <p className="text-white/80 max-w-2xl text-lg md:text-xl font-sans font-light leading-relaxed hero-text text-balance">
-                    Wir übersetzen Ihre Unternehmenswerte in Corporate Fashion, Messebekleidung und High-End Merchandise, die einen bleibenden Eindruck hinterlassen.
+                    Für Marken, die bleiben – und Agenturen, die Perfektion suchen.
                 </p>
             </div>
 

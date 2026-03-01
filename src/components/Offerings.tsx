@@ -16,9 +16,9 @@ const OFFERINGS = [
         highlight: true,
     },
     {
-        title: "Merchandise Line",
-        desc: "Hochwertige Give-Aways und Promo-Artikel, die nicht im Müll landen.",
-        features: ["Trend-Scouting", "Mustererstellung", "Qualitätskontrolle"],
+        title: "High-End Merchandise",
+        desc: "Purpose-Driven B2B Give-Aways und Premium Wearables, die echte Markenbindung schaffen.",
+        features: ["Desk-Ready Tech", "Eco-Swag & rPET", "Impact Messaging"],
         highlight: false,
     }
 ];

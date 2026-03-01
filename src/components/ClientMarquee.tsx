@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const CLIENTS = [
-    "August Storm", "Banxware", "Commerzbank", "deltaDAO", "Küchenfreunde", "Nutramaxx", "Market Grounds", "Messe Frankfurt", "McCann Health", "Speed Care", "Wulf Johannsen", "XING"
+    "August Storm", "Banxware", "Commerzbank", "deltaDAO", "Küchenfreunde", "nature gummies", "Nutramaxx", "Market Grounds", "Messe Frankfurt", "McCANN HEALTH", "Speed Care", "Wulf Johannsen", "XING"
 ];
 
 export function ClientMarquee() {

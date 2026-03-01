@@ -61,18 +61,21 @@ export function Philosophy() {
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                     <div className="manifesto-old text-left border-l-2 border-white/20 pl-8 py-4">
-                        <h4 className="text-white/40 font-mono text-sm tracking-widest mb-4 uppercase">Die Norm</h4>
-                        <p className="text-white/60 font-sans text-2xl md:text-3xl font-light leading-relaxed">
+                        <h3 className="text-white/40 font-mono text-sm tracking-widest mb-4 uppercase">Die Norm</h3>
+                        <h2 className="text-white/60 font-sans text-2xl md:text-3xl font-light leading-relaxed">
                             Andere fragen: <br />
-                            <span className="italic">„Welchen Artikel können wir günstig bedrucken?“</span>
-                        </p>
+                            <span className="italic">„Welchen Wegwerf-Artikel können wir günstig bedrucken?“</span>
+                        </h2>
                     </div>
 
                     <div className="manifesto-new text-right border-r-2 border-primary pr-8 py-4">
-                        <h4 className="text-primary font-mono text-sm tracking-widest mb-4 uppercase">Unser Anspruch</h4>
-                        <p className="text-white font-serif text-3xl md:text-4xl italic leading-relaxed">
+                        <h3 className="text-primary font-mono text-sm tracking-widest mb-4 uppercase">Unser Anspruch</h3>
+                        <h2 className="text-white font-serif text-3xl md:text-4xl italic leading-relaxed">
                             Wir fragen: <br />
-                            „Welches haptische Erlebnis repräsentiert Ihre Werte am präzisesten?“
+                            „Welches haptische, hochwertige Produkt repräsentiert Ihre Corporate Identity am präzisesten?“
+                        </h2>
+                        <p className="mt-6 text-white/70 font-sans text-lg md:text-xl font-light leading-relaxed">
+                            Als Agentur für Corporate Brand Concepts realisieren wir Purpose-Driven Merchandise und kreislauffähige Textilien. Echtes Employer Branding beginnt mit der textilen Identität.
                         </p>
                     </div>
 

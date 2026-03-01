@@ -7,6 +7,7 @@ import { Methodology } from "./components/Methodology";
 import { Offerings } from "./components/Offerings";
 import { Footer } from "./components/Footer";
 import { ClientMarquee } from "./components/ClientMarquee";
+import { BusinessAlltag } from "./components/BusinessAlltag";
 import { TeamSection } from "./components/TeamSection";
 import { ContactModal } from "./components/ContactModal";
 import { LegalModal } from "./components/LegalModal";
@@ -22,6 +23,7 @@ function App() {
         <Philosophy />
         <Methodology />
         <Offerings />
+        <BusinessAlltag />
       </main>
       <TeamSection />
       <Footer />

@@ -36,11 +36,11 @@ function ProcessFlow() {
     ];
 
     return (
-        <div ref={container} className="bg-white p-6 rounded-2xl shadow-sm border border-charcoal/5 h-64 relative flex flex-col justify-center overflow-hidden">
+        <div ref={container} className="bg-primary/[0.03] p-6 rounded-2xl shadow-sm border border-primary/10 h-64 relative flex flex-col justify-center overflow-hidden">
             <h4 className="absolute top-6 left-6 font-mono text-xs font-bold tracking-widest text-primary uppercase">Creation Flow</h4>
             <div className="flex justify-between items-center relative z-10 px-2 mt-8">
                 {steps.map((step, i) => (
-                    <div key={i} className="flex flex-col items-center gap-3 relative bg-white z-20">
+                    <div key={i} className="flex flex-col items-center gap-3 relative bg-primary/[0.03] z-20">
                         <div className="process-icon w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                             <step.icon className="w-5 h-5" />
                         </div>
@@ -132,7 +132,7 @@ function LogisticsMap() {
     }, { scope: container });
 
     return (
-        <div ref={container} className="bg-white p-6 rounded-2xl shadow-sm border border-charcoal/5 h-64 relative flex flex-col justify-between overflow-hidden">
+        <div ref={container} className="bg-primary/[0.03] p-6 rounded-2xl shadow-sm border border-primary/10 h-64 relative flex flex-col justify-between overflow-hidden">
             <div className="flex justify-between items-center z-10">
                 <div className="flex flex-col">
                     <span className="font-mono text-[10px] text-charcoal/40 uppercase tracking-widest">Origin</span>
@@ -168,9 +168,9 @@ function LogisticsMap() {
                 </div>
             </div>
 
-            <div className="bg-charcoal/5 rounded-xl p-3 flex justify-between items-center">
+            <div className="bg-primary/5 rounded-xl p-3 flex justify-between items-center">
                 <div className="flex items-center gap-2 text-xs font-sans text-charcoal/70">
-                    <Package className="w-4 h-4 text-charcoal" />
+                    <Package className="w-4 h-4 text-primary" />
                     <span>Sendungstracking</span>
                 </div>
                 <span className="font-mono text-[10px] bg-white px-2 py-1 rounded text-primary font-bold shadow-sm">LIVE</span>
@@ -200,21 +200,21 @@ export function Services() {
         <section ref={container} id="prozess" className="py-32 px-6 w-full max-w-7xl mx-auto">
             <div className="mb-20 text-center max-w-3xl mx-auto">
                 <h2 className="text-charcoal text-4xl md:text-5xl font-heading font-bold mb-6 tracking-tight">
-                    Wir übernehmen die Komplexität.
+                    Full-Service Logistik & Beratung.
                 </h2>
                 <p className="text-charcoal/70 text-lg font-sans font-light leading-relaxed">
-                    Von der ersten Skizze bis zur europaweiten Logistik – ein nahtloser Kreislauf für Ihre Corporate Fashion und Merchandise-Linien.
+                    Von der ersten Skizze bis zur europaweiten Logistik – ein nahtloser Kreislauf für Ihre Zirkularwirtschaft in der Corporate Fashion und bei Merchandise-Linien.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="service-card flex flex-col gap-6">
-                    <h3 className="font-heading text-2xl font-bold">Der Aufbau</h3>
+                    <h3 className="font-heading text-2xl font-bold">Die Konzeption</h3>
                     <ProcessFlow />
                 </div>
 
                 <div className="service-card flex flex-col gap-6">
-                    <h3 className="font-heading text-2xl font-bold">Die Standards</h3>
+                    <h3 className="font-heading text-2xl font-bold">Die GOTS-Zertifizierung</h3>
                     <StandardsChecklist />
                 </div>
 

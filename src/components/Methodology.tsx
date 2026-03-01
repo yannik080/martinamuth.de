@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 const CARDS = [
     {
         id: "01",
-        title: "Strategie & Identifikation",
-        text: "Wir beginnen mit dem Kern. Was sind Ihre Werte? Was soll das Endprodukt ausstrahlen? Unsere Beratung ist der Grundstein für nachhaltige Corporate Fashion, die nicht verkleidet, sondern repräsentiert.",
+        title: "Strategie & Sparring Session",
+        text: "Wir beginnen mit dem Kern in unserer exklusiven Beratungsphase. Welche Corporate Identity soll das Endprodukt ausstrahlen? Als strategische Boutique-Agentur formen wir den Grundstein für nachhaltige Corporate Fashion, die nicht verkleidet, sondern Ihre Werte repräsentiert.",
         bgColor: "bg-background",
         textColor: "text-charcoal",
         imgUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop" // Professional strategy/desk
@@ -18,7 +18,7 @@ const CARDS = [
     {
         id: "02",
         title: "Sourcing & Veredelung",
-        text: "Aus einem globalen, zertifizierten Netzwerk wählen wir die perfekten Materialien. Stick. Druck. Webung. Jedes Detail wird präzise auf Langlebigkeit und optische Brillanz abgestimmt.",
+        text: "Aus einem globalen, GOTS-zertifizierten Netzwerk wählen wir die perfekten Materialien für Ihre Zirkularwirtschaft. Stick. Direktdruck. Webung. Jedes Detail wird präzise auf Langlebigkeit (Slow Fashion) und optische Brillanz abgestimmt.",
         bgColor: "bg-charcoal",
         textColor: "text-white",
         imgUrl: "/images/tailoring_detail.png" // Fabric/tailoring detail
@@ -26,7 +26,7 @@ const CARDS = [
     {
         id: "03",
         title: "Rollout & Logistik",
-        text: "Pünktlich am Messestand. Einzeln verpackt für den Mitarbeiter. Wir steuern die gesamte Supply Chain bis zur Übergabe an den Endträger.",
+        text: "Pünktlich am Messestand. Einzeln verpackt für Ihre Mitarbeiter. Wir steuern die gesamte Supply Chain – von der ersten Skizze bis zur europaweiten Logistik und Übergabe an den Endträger.",
         bgColor: "bg-primary",
         textColor: "text-white",
         imgUrl: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2670&auto=format&fit=crop" // Logistics/Boxes/Clean warehouse
