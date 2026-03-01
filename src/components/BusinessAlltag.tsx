@@ -71,8 +71,15 @@ export function BusinessAlltag() {
                 </p>
             </div>
 
-            <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden linkedin-widget-container border border-charcoal/5 p-4 md:p-8 min-h-[400px]">
+            <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden linkedin-widget-container border border-charcoal/5 p-4 md:p-8 min-h-[400px] relative">
+                {/* Top overlay to hide "Edit Widget" and "Share" badges */}
+                <div className="absolute top-0 left-0 w-full h-12 bg-white z-50 pointer-events-auto"></div>
+
+                {/* The dynamic widget */}
                 <div className="elfsight-app-beafe946-72db-4730-bb75-ad9e5be2ddaf" data-elfsight-app-lazy></div>
+
+                {/* Bottom overlay to hide "Free LinkedIn Feed Widget" badge */}
+                <div className="absolute bottom-0 left-0 w-full h-14 bg-white z-50 pointer-events-auto"></div>
             </div>
 
             <div className="mt-12 business-header">

@@ -73,4 +73,12 @@
       background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s,
       backdrop-filter 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
   }
+
+  /* Elfsight Widget Overrides */
+  [class*="eapps-widget-toolbar"],
+  [class*="eui-widget-title"],
+  a[href*="elfsight.com"],
+  .eapps-link {
+    display: none !important;
+  }
 }
