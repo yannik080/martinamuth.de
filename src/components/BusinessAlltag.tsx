@@ -1,13 +1,18 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Linkedin } from "lucide-react";
+import { useCookieStore } from "../store/useCookieStore";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function BusinessAlltag() {
     const container = useRef<HTMLElement>(null);
+    const { consent, consentMode, openSettings } = useCookieStore();
+    const [isLoadedLocal, setIsLoadedLocal] = useState(false);
+
+    const shouldLoad = consentMode === 'global-banner' ? consent === 'all' : isLoadedLocal;
 
     useGSAP(() => {
         gsap.fromTo(".business-header",
@@ -41,9 +46,12 @@ export function BusinessAlltag() {
 
     // Load the Elfsight script dynamically
     useEffect(() => {
+        if (!shouldLoad) return;
+
         const script = document.createElement("script");
         script.src = "https://elfsightcdn.com/platform.js";
         script.async = true;
+        // Adding the script to the body evaluates it
         document.body.appendChild(script);
 
         return () => {
@@ -52,7 +60,7 @@ export function BusinessAlltag() {
                 document.body.removeChild(script);
             }
         };
-    }, []);
+    }, [shouldLoad]);
 
     return (
         <section ref={container} className="w-full py-32 px-6 bg-charcoal/5 flex flex-col items-center">
@@ -67,7 +75,7 @@ export function BusinessAlltag() {
                     Aus dem Business Alltag.
                 </h2>
                 <p className="text-lg text-charcoal/70 font-sans font-light leading-relaxed">
-                    Echte Einblicke in unsere Projekte, Material-Scoutings und strategischen Partnerschaften. Verfolgen Sie unsere aktuellen Themen direkt auf LinkedIn.
+                    Der Weg von der Skizze zum fertigen Premium-Produkt ist vielseitig. Auf LinkedIn teile ich regelmäßig echte Insights aus unserem Agenturalltag, Gedanken zu Nachhaltigkeit in der Textilproduktion und aktuelle B2B-Projekte. Lassen Sie uns vernetzen!
                 </p>
             </div>
 
@@ -83,8 +91,41 @@ export function BusinessAlltag() {
                     badge right below the overflow-hidden boundary so it disappears.
                   - Carousel dots stay visible since they are higher up.
                 */}
-                <div className="relative w-full -mb-[65px] md:-mb-[75px]">
-                    <div className="elfsight-app-beafe946-72db-4730-bb75-ad9e5be2ddaf" data-elfsight-app-lazy></div>
+                <div className="relative w-full -mb-[65px] md:-mb-[75px] min-h-[400px] flex items-center justify-center">
+                    {shouldLoad ? (
+                        <div className="elfsight-app-beafe946-72db-4730-bb75-ad9e5be2ddaf"></div>
+                    ) : (
+                        <div className="text-center p-8 max-w-md mx-auto relative z-10 bottom-6 md:bottom-10 flex flex-col items-center">
+                            <div className="w-12 h-12 bg-charcoal/5 rounded-full flex items-center justify-center mb-4 text-charcoal/40">
+                                <Linkedin className="w-5 h-5" />
+                            </div>
+                            {consentMode === 'global-banner' ? (
+                                <>
+                                    <p className="text-charcoal/60 mb-6 font-sans">
+                                        Bitte akzeptieren Sie alle Cookies, um den LinkedIn-Feed hier direkt sehen zu können.
+                                    </p>
+                                    <button
+                                        onClick={openSettings}
+                                        className="px-6 py-2.5 bg-white rounded-full border border-charcoal/10 shadow-sm text-sm font-medium hover:bg-charcoal/5 transition-colors"
+                                    >
+                                        Cookie Einstellungen öffnen
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <p className="text-charcoal/60 mb-6 font-sans">
+                                        Mit dem Laden des LinkedIn-Feeds akzeptieren Sie die Datenschutzerklärung von Elfsight.
+                                    </p>
+                                    <button
+                                        onClick={() => setIsLoadedLocal(true)}
+                                        className="px-8 py-3 bg-primary text-white rounded-full shadow-lg shadow-primary/20 font-sans font-medium hover:scale-105 active:scale-95 transition-transform"
+                                    >
+                                        LinkedIn-Feed laden
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                    )}
                 </div>
 
             </div>

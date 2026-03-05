@@ -1,4 +1,5 @@
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { Services } from "./components/Services";
@@ -11,25 +12,41 @@ import { BusinessAlltag } from "./components/BusinessAlltag";
 import { TeamSection } from "./components/TeamSection";
 import { ContactModal } from "./components/ContactModal";
 import { LegalModal } from "./components/LegalModal";
+import { CookieBanner } from "./components/CookieBanner";
+import { Journal } from "./pages/Journal";
+import { BlogPost } from "./pages/BlogPost";
+
+function Home() {
+  return (
+    <main>
+      <HeroSection />
+      <ClientMarquee />
+      <Services />
+      <Philosophy />
+      <Methodology />
+      <Offerings />
+      <BusinessAlltag />
+      <TeamSection />
+    </main>
+  );
+}
 
 function App() {
   return (
-    <div className="w-full relative bg-background min-h-screen font-sans">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <ClientMarquee />
-        <Services />
-        <Philosophy />
-        <Methodology />
-        <Offerings />
-        <BusinessAlltag />
-      </main>
-      <TeamSection />
-      <Footer />
-      <ContactModal />
-      <LegalModal />
-    </div>
+    <Router>
+      <div className="w-full relative bg-background min-h-screen font-sans">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/journal" element={<Journal />} />
+          <Route path="/journal/:slug" element={<BlogPost />} />
+        </Routes>
+        <Footer />
+        <ContactModal />
+        <LegalModal />
+        <CookieBanner />
+      </div>
+    </Router>
   );
 }
 

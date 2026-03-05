@@ -2,12 +2,18 @@ import { X, Mail, Phone } from "lucide-react";
 import { useContactStore } from "../lib/store";
 import { useEffect, useState } from "react";
 import { InlineWidget } from "react-calendly";
+import { useCookieStore } from "../store/useCookieStore";
 
 export function ContactModal() {
     const { isContactModalOpen, closeContactModal } = useContactStore();
+    const { consent, consentMode, openSettings } = useCookieStore();
     const [mounted, setMounted] = useState(false);
+    const [isLoadedLocal, setIsLoadedLocal] = useState(false);
+
+    const shouldLoad = consentMode === 'global-banner' ? consent === 'all' : isLoadedLocal;
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 
@@ -27,9 +33,9 @@ export function ContactModal() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                     <div className="relative z-10">
                         <img src="/images/Bildmarke.png" alt="Logo" className="h-8 mb-12" />
-                        <h3 className="text-3xl font-heading font-bold tracking-tight mb-4">Lassen Sie uns sprechen.</h3>
+                        <h3 className="text-3xl font-heading font-bold tracking-tight mb-4">Lassen Sie uns über Ihre Marke sprechen.</h3>
                         <p className="text-white/60 font-sans leading-relaxed mb-12">
-                            Buchen Sie direkt einen Termin für ein erstes, unverbindliches Kennenlernen oder kontaktieren Sie uns klassisch.
+                            Egal, ob Sie schon eine konkrete Vision haben oder Inspiration für Ihre nächste B2B-Kollektion suchen – wir freuen uns auf ein erstes unverbindliches Gespräch.
                         </p>
 
                         <div className="space-y-6">
@@ -62,11 +68,47 @@ export function ContactModal() {
                         </button>
                     </div>
 
-                    <div className="w-full h-full pt-12" style={{ filter: "hue-rotate(-65deg) saturate(30%) brightness(1.1)" }}>
-                        <InlineWidget
-                            url="https://calendly.com/martina-muth/meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff"
-                            styles={{ height: '700px', width: '100%', minWidth: '320px' }}
-                        />
+                    <div className="w-full h-full pt-12 flex flex-col items-center justify-center" style={{ filter: shouldLoad ? "hue-rotate(-65deg) saturate(30%) brightness(1.1)" : "none" }}>
+                        {shouldLoad ? (
+                            <InlineWidget
+                                url="https://calendly.com/martina-muth/meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff"
+                                styles={{ height: '700px', width: '100%', minWidth: '320px' }}
+                            />
+                        ) : (
+                            <div className="text-center p-8 max-w-sm mx-auto">
+                                <div className="w-16 h-16 bg-charcoal/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <span className="font-heading font-bold text-2xl text-charcoal/30">C</span>
+                                </div>
+                                <h4 className="text-xl font-heading font-medium text-charcoal mb-3">Terminbuchung blockiert</h4>
+
+                                {consentMode === 'global-banner' ? (
+                                    <>
+                                        <p className="text-charcoal/60 mb-8 font-sans leading-relaxed">
+                                            Für die direkte Terminbuchung via Calendly benötigen wir Ihre Zustimmung zur Verwendung externer Dienste (Cookies).
+                                        </p>
+                                        <button
+                                            onClick={openSettings}
+                                            className="px-8 py-3.5 bg-primary text-white rounded-xl shadow-lg shadow-primary/20 font-sans font-medium hover:scale-105 active:scale-95 transition-transform w-full mb-4"
+                                        >
+                                            Cookie Einstellungen anpassen
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <p className="text-charcoal/60 mb-8 font-sans leading-relaxed">
+                                            Mit dem Laden des Formulars akzeptieren Sie die Datenschutzbestimmungen von Calendly.
+                                        </p>
+                                        <button
+                                            onClick={() => setIsLoadedLocal(true)}
+                                            className="px-8 py-3.5 bg-primary text-white rounded-xl shadow-lg shadow-primary/20 font-sans font-medium hover:scale-105 active:scale-95 transition-transform w-full mb-4"
+                                        >
+                                            Buchungsformular laden
+                                        </button>
+                                    </>
+                                )}
+                                <p className="text-sm text-charcoal/50">Alternativ erreichen Sie uns klassisch per E-Mail oder Telefon.</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

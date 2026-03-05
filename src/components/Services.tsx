@@ -200,10 +200,10 @@ export function Services() {
         <section ref={container} id="prozess" className="py-32 px-6 w-full max-w-7xl mx-auto">
             <div className="mb-20 text-center max-w-3xl mx-auto">
                 <h2 className="text-charcoal text-4xl md:text-5xl font-heading font-bold mb-6 tracking-tight">
-                    Full-Service Logistik & Beratung.
+                    Full-Service: Von der ersten Skizze bis zur europaweiten Logistik.
                 </h2>
                 <p className="text-charcoal/70 text-lg font-sans font-light leading-relaxed">
-                    Von der ersten Skizze bis zur europaweiten Logistik – ein nahtloser Kreislauf für Ihre Zirkularwirtschaft in der Corporate Fashion und bei Merchandise-Linien.
+                    Wir begleiten Sie im Full-Service: Ob exklusive Mitarbeiter-Kollektionen oder High-End Merchandise. Wir kümmern uns um ganzheitliches Design, nachhaltige GOTS-zertifizierte Produktion und die nahtlose Abwicklung. Sie erhalten alles aus einer Hand – transparent, verlässlich und auf höchstem Niveau.
                 </p>
             </div>
 

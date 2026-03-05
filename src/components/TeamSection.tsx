@@ -29,10 +29,10 @@ export function TeamSection() {
         <section ref={container} className="w-full py-32 px-6 bg-white flex flex-col items-center">
             <div className="max-w-3xl text-center mb-20 team-member">
                 <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mb-6">
-                    Die Gesichter hinter den Konzepten.
+                    Die Köpfe hinter den Konzepten.
                 </h2>
                 <p className="text-lg text-charcoal/70 font-sans font-light leading-relaxed">
-                    Ein eingespieltes Team aus Strategie und Design. Wir kombinieren tiefes Markenverständnis mit kompromisslosem Anspruch an Qualität und Ästhetik.
+                    Ein Team mit kompromisslosem Anspruch an Qualität, Ästhetik und Markenführung.
                 </p>
             </div>
 
@@ -49,7 +49,7 @@ export function TeamSection() {
                     <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">Martina Muth</h3>
                     <p className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4">Gründerin & Strategie</p>
                     <p className="text-charcoal/70 font-sans leading-relaxed max-w-sm">
-                        Seit fast drei Jahrzehnten (u.a. bei der renommierten SOLUTIONS Agentur) die treibende Kraft für Corporate Branding und maßgeschneiderte Textilkonzepte für internationale globale Player.
+                        Branding ist für mich mehr als ein Logo. Seit fast drei Jahrzehnten übersetze ich Unternehmenswerte in fühlbare Produkte. Mein Fokus liegt auf strategischer Beratung und nachhaltigen Textil-Konzepten, die nicht nur gut aussehen, sondern einen echten Wert für Global Player schaffen.
                     </p>
                 </div>
 
@@ -65,7 +65,7 @@ export function TeamSection() {
                     <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">Lorna</h3>
                     <p className="text-primary font-mono text-xs font-bold tracking-widest uppercase mb-4">Sales & Kundenberatung</p>
                     <p className="text-charcoal/70 font-sans leading-relaxed max-w-sm">
-                        Mit meiner Erfahrung im Vertrieb für unterschiedlichste Branchen erkenne ich schnell, worauf es ankommt. Meine Leidenschaft gilt Menschen, Marken und maßgeschneiderten Lösungen – um genau das haptische Produkt zu finden, das Ihre Werte repräsentiert.
+                        Im Vertrieb und der Beratung geht es mir vor allem um eines: Zuhören. Ich möchte Ihre Marke wirklich verstehen, um genau das Produkt zu finden, das Ihre Werte repräsentiert. Mit Leidenschaft für Menschen und maßgeschneiderte Lösungen begleite ich Sie partnerschaftlich ans Ziel.
                     </p>
                 </div>
             </div>

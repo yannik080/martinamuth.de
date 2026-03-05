@@ -43,17 +43,21 @@ export function HeroSection() {
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center text-center mt-20">
-                <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 tracking-tighter hero-text">
-                    Marken-Essenz. <br />
-                    Greifbar gemacht.
-                </h1>
+                {/* SEO H1: Visually hidden but readable by screen readers and search engines */}
+                <h1 className="sr-only">Corporate Fashion Agentur & High-End B2B Merchandise</h1>
+
+                {/* Visual Headline (was h1, now h2 for semantics while keeping design) */}
+                <h2 className="text-white text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-4 tracking-tighter hero-text">
+                    Ihre Werte, <br />
+                    fühlbar gemacht.
+                </h2>
 
                 <p className="text-primary text-4xl md:text-5xl font-serif italic mb-8 hero-text max-w-4xl text-balance">
                     Corporate Identity übersetzt in Premium Textilien und B2B Merchandise.
                 </p>
 
                 <p className="text-white/80 max-w-2xl text-lg md:text-xl font-sans font-light leading-relaxed hero-text text-balance">
-                    Für Marken, die bleiben – und Agenturen, die Perfektion suchen.
+                    Als Agentur für Corporate Fashion und Premium B2B Merchandise übersetzen wir Ihre Markenidentität in Textilien, die bleiben. Keine Katalogware, sondern maßgeschneiderte Konzepte für Unternehmen, die den Unterschied schätzen.
                 </p>
             </div>
 

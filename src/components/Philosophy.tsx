@@ -39,6 +39,11 @@ export function Philosophy() {
             x: 50,
             duration: 1,
             ease: "power2.out",
+        }, "-=0.5").from(".manifesto-desc", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power2.out",
         }, "-=0.5");
     }, { scope: container });
 
@@ -58,7 +63,7 @@ export function Philosophy() {
             </div>
 
             <div className="relative z-10 w-full max-w-6xl px-6 py-24 manifesto-text flex flex-col items-center">
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16 md:mb-20">
 
                     <div className="manifesto-old text-left border-l-2 border-white/20 pl-8 py-4">
                         <h3 className="text-white/40 font-mono text-sm tracking-widest mb-4 uppercase">Die Norm</h3>
@@ -74,11 +79,14 @@ export function Philosophy() {
                             Wir fragen: <br />
                             „Welches haptische, hochwertige Produkt repräsentiert Ihre Corporate Identity am präzisesten?“
                         </h2>
-                        <p className="mt-6 text-white/70 font-sans text-lg md:text-xl font-light leading-relaxed">
-                            Als Agentur für Corporate Brand Concepts realisieren wir Purpose-Driven Merchandise und kreislauffähige Textilien. Echtes Employer Branding beginnt mit der textilen Identität.
-                        </p>
                     </div>
 
+                </div>
+
+                <div className="manifesto-desc w-full max-w-4xl text-center">
+                    <p className="text-white/80 font-sans text-xl md:text-2xl font-light leading-relaxed text-balance">
+                        Die Zeiten von billigen Wegwerf-Artikeln sind vorbei. Wir denken Corporate Merchandise neu: nachhaltig, hochwertig und mit echtem Purpose. Es geht nicht um das nächste bedruckte T-Shirt, sondern um textile Botschafter, die Ihre Unternehmenskultur nach außen tragen. Erstklassige Qualität und GOTS-zertifizierte Kreislaufwirtschaft sind für uns kein Trend, sondern Standard.
+                    </p>
                 </div>
             </div>
         </section>
