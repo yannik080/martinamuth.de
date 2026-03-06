@@ -7,6 +7,13 @@ import { PenTool, Scissors, Shirt, Package, CheckCircle2, Truck, Globe2, Leaf } 
 gsap.registerPlugin(ScrollTrigger);
 
 // Animation 1: Process Flow (Replacing MaterialLayers)
+const steps = [
+    { icon: PenTool, label: "Design" },
+    { icon: Scissors, label: "Schnitt" },
+    { icon: Shirt, label: "Sample" },
+    { icon: Package, label: "Batch" }
+];
+
 function ProcessFlow() {
     const container = useRef<HTMLDivElement>(null);
 
@@ -27,13 +34,6 @@ function ProcessFlow() {
             }, "-=2.4")
             .to({}, { duration: 2 }); // hold
     }, { scope: container });
-
-    const steps = [
-        { icon: PenTool, label: "Design" },
-        { icon: Scissors, label: "Schnitt" },
-        { icon: Shirt, label: "Sample" },
-        { icon: Package, label: "Batch" }
-    ];
 
     return (
         <div ref={container} className="bg-primary/[0.03] p-6 rounded-2xl shadow-sm border border-primary/10 h-64 relative flex flex-col justify-center overflow-hidden">
@@ -61,6 +61,12 @@ function ProcessFlow() {
 }
 
 // Animation 2: Standards Checklist (Replacing CertificationDashboard)
+const certs = [
+    { name: "Oeko-Tex Standard 100", icon: Leaf },
+    { name: "GOTS Certified Organic", icon: Globe2 },
+    { name: "Grüner Knopf", icon: CheckCircle2 }
+];
+
 function StandardsChecklist() {
     const container = useRef<HTMLDivElement>(null);
 
@@ -82,12 +88,6 @@ function StandardsChecklist() {
             }, "-=1.5")
             .to({}, { duration: 3 }); // hold
     }, { scope: container });
-
-    const certs = [
-        { name: "Oeko-Tex Standard 100", icon: Leaf },
-        { name: "GOTS Certified Organic", icon: Globe2 },
-        { name: "Grüner Knopf", icon: CheckCircle2 }
-    ];
 
     return (
         <div ref={container} className="bg-primary/5 p-6 rounded-2xl border border-primary/20 h-64 flex flex-col justify-center gap-4">
