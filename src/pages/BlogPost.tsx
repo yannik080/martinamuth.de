@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { journalPosts } from "../data/journalPosts";
 import { useEffect } from "react";
+import { sanitizeHtml } from "../utils/sanitize";
 
 export function BlogPost() {
     const { slug } = useParams();
@@ -65,7 +66,7 @@ export function BlogPost() {
                         prose-strong:font-bold prose-strong:text-charcoal
                         prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:font-serif prose-blockquote:text-2xl prose-blockquote:text-charcoal/70 prose-blockquote:my-12
                     "
-                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content) }}
                 />
             </article>
         </main>
