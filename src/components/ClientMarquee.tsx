@@ -24,7 +24,10 @@ export function ClientMarquee() {
         <section className="w-full py-16 bg-white overflow-hidden border-y border-charcoal/5">
             <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
                 <p className="text-primary font-mono text-sm tracking-widest uppercase font-bold">
-                    Vertraut von Branchenführern
+                    Branchenübergreifende Expertise
+                </p>
+                <p className="text-charcoal/50 font-sans text-sm mt-2">
+                    Eine Auswahl unserer Referenzen
                 </p>
             </div>
 
